@@ -44,7 +44,7 @@ class Consumable:Items{
 
             break;
         }
-        UsesCurrent-=1;
+        UsesCurrent+=1;
     }
 }
 
@@ -53,9 +53,12 @@ class Inventory{
     public List<Items> ItemList=new();
 
     public void Display(){
+        Console.WriteLine("Current Items in your Backpack:");
+        Console.WriteLine();
         for (int i = 0; i < ItemList.Count; i++){
             Console.WriteLine((i+1)+") "+ItemList[i].Name);
         }
+        Console.ReadLine();
     }
     public void PickUp(Items item, Character character){
         character.Backpack.ItemList.Add(item);
